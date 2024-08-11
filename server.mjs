@@ -27,7 +27,8 @@ app.prepare().then(() => {
     // ...
     socket.on("message", (msg) => {
       // send received message and response
-      console.log(msg);
+      socket.send(msg);
+      // broadcast received message to all connected clients
       socket.broadcast.emit("chat-message", msg);
     });
 
