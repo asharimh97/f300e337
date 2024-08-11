@@ -1,31 +1,27 @@
 "use client";
 
-import Image from "next/image";
 import useSocket from "../hooks/useSocket";
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-import { socket } from "../socket"
 import Chatbox from "../components/chat-box/Chatbox";
+import UserContext from "../contexts/UserContext";
+import { generateUsername } from "unique-username-generator";
 
 export default function Home() {
   const { connected } = useSocket();
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     if (connected) {
-      console.log("Connected to the server");
+      setUsername(generateUsername());
     }
-  }, [connected])
-
-  const handleClick = () => {
-    socket.emit("hello", "world");
-    socket.on("hello", (data) => {
-      console.log(data)
-    });
-  }
+  }, [connected]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Chatbox />
+      <UserContext.Provider value={username}>
+        <Chatbox />
+      </UserContext.Provider>
     </main>
   );
 }
