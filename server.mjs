@@ -19,6 +19,13 @@ app.prepare().then(() => {
 
   io.on("connection", (socket) => {
     // ...
+    socket.on("hello", (msg) => {
+      socket.send(`Hello, ${msg}`);
+    })
+
+    socket.on("disconnect", () => {
+      console.log("Client disconnected");
+    });
   });
 
   httpServer
