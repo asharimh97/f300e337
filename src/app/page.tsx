@@ -18,7 +18,7 @@ export default function Home() {
   }, [connected]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-16">
       <UserContext.Provider value={username}>
         <Chatbox />
       </UserContext.Provider>
