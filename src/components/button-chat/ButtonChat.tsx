@@ -7,7 +7,7 @@ function ButtonChat({ onClick }: ButtonChatProps) {
     <div className="fixed bottom-0 right-0 mb-4 mr-4">
       <button
         id="open-chat"
-        className="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition duration-300 flex items-center rounded-full"
+        className="bg-blue-500 text-white p-3 hover:bg-blue-600 transition duration-300 flex items-center rounded-full"
         onClick={onClick}
       >
         <svg
@@ -18,9 +18,9 @@ function ButtonChat({ onClick }: ButtonChatProps) {
           stroke="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M12 6v6m0 0v6m0-6h6m-6 0H6"
           ></path>
         </svg>

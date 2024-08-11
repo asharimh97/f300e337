@@ -1,35 +1,37 @@
 "use client";
 
-import { useState } from "react";
-import ButtonChat from "../button-chat/ButtonChat";
 import classNames from "classnames";
 import BubleMessage from "../buble-message/BubleMessage";
 import ChatboxHeader from "./ChatboxHeader";
 import MessageCompose from "./MessageCompose";
+import { useEffect, useState } from "react";
+import { socket } from "@/src/socket";
 
 function Chatbox() {
-  const [showChat, setShowChat] = useState(true);
+  const [totalClients, setTotalClients] = useState(0);
+  useEffect(() => {
+    socket.on("connected-clients", (data) => {
+      setTotalClients(data);
+    });
+  }, []);
   return (
     <>
-      <ButtonChat onClick={() => setShowChat((prevState) => !prevState)} />
-      <div
-        id="chat-container"
-        className={classNames("fixed bottom-20 right-4 w-96", {
-          hidden: !showChat,
-        })}
-      >
+      <div id="chat-container" className="w-[450px]">
         <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
-          <ChatboxHeader onClick={() => setShowChat(false)} />
-          <div id="chatbox" className="p-4 h-80 overflow-y-auto">
+          <ChatboxHeader />
+          <div id="chatbox" className="p-4 h-[450px] overflow-y-auto">
             {/* <!-- Chat messages will be displayed here --> */}
-            <BubleMessage message="hello" isUser={true} />
+            {/* <BubleMessage message="hello" isUser={true} />
             <BubleMessage message="This is a response from the chatbot." />
             <BubleMessage message="this example of chat" isUser={true} />
             <BubleMessage message="This is a response from the chatbot." />
             <BubleMessage message="design with tailwind" isUser={true} />
-            <BubleMessage message="This is a response from the chatbot." />
+            <BubleMessage message="This is a response from the chatbot." /> */}
           </div>
           <MessageCompose />
+        </div>
+        <div className="mt-6 text-center font-semibold italic">
+          Total online users: {totalClients}
         </div>
       </div>
     </>

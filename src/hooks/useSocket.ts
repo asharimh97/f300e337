@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { socket } from "../socket"
+import { socket } from "../socket";
 
 function useSocket() {
   const [connected, setConnected] = useState(false);
@@ -9,7 +9,6 @@ function useSocket() {
   useEffect(() => {
     if (socket.connected) {
       onConnect();
-      
     }
     function onConnect() {
       setConnected(true);
@@ -37,7 +36,7 @@ function useSocket() {
   return {
     connected,
     transport,
-  }
+  };
 }
 
 export default useSocket;
