@@ -4,7 +4,7 @@ interface ButtonChatProps {
 
 function ButtonChat({ onClick }: ButtonChatProps) {
   return (
-    <div className="fixed bottom-0 right-0 mb-4 mr-4">
+    <div data-testid="btn-chat" className="fixed bottom-0 right-0 mb-4 mr-4">
       <button
         id="open-chat"
         className="bg-blue-500 text-white p-3 hover:bg-blue-600 transition duration-300 flex items-center rounded-full"

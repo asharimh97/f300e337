@@ -13,7 +13,11 @@ function BubleMessage({
 }: BubleMessageProps) {
   return (
     <div className={classNames("mb-2", { "text-right": isUser })}>
-      {!isUser && <p className="text-sm text-gray-500">{username}</p>}
+      {!isUser && (
+        <p data-testid="msg-username" className="text-sm text-gray-500">
+          {username}
+        </p>
+      )}
       <p
         className={classNames("rounded-lg py-2 px-4 inline-block", {
           "bg-blue-500 text-white": isUser,
