@@ -12,6 +12,8 @@
     "test": "vitest"
   },
   "dependencies": {
+    "artillery": "^2.0.19",
+    "artillery-engine-socketio-v3": "^1.2.0",
     "classnames": "^2.5.1",
     "next": "14.2.5",
     "react": "^18",

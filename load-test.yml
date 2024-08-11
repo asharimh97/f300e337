@@ -1,0 +1,20 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 200
+      name: ramp up
+  engines:
+    socketio-v3: {}
+  
+scenarios:
+  - name: Load testing scenarios
+    engine: socketio-v3
+    flow:
+      # emit an object
+      - emit:
+          channel: "chat-message"
+          data:
+            date: "2024-08-11T14:07:39.770Z"
+            message: "sample message"
+            username: "user1"

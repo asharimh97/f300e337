@@ -8,6 +8,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "yaml.schemas": {
-    "https://www.artillery.io/schema.json": []
+    "https://www.artillery.io/schema.json": [
+      "file:///Users/ashari/ashari/technical-tests/next-practical/load-test.yml"
+    ]
   }
 }
