@@ -31,7 +31,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/74217693-2ebf-4409-b17f-8526863dccdd">
 
-<img width="811" alt="image" src="https://github.com/user-attachments/assets/6b6450b8-c4a0-4bc1-9b75-8b71f947a79f">
+<img width="639" alt="image" src="https://github.com/user-attachments/assets/3ded1a9e-a8d1-4b72-a9f0-deece54c5263">
 
 <img width="777" alt="image" src="https://github.com/user-attachments/assets/03a66251-bd49-4ee3-90c5-5632841f6e88">
 
