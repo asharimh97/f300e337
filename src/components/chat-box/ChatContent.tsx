@@ -27,7 +27,11 @@ function ChatContent() {
     };
   }, []);
   return (
-    <div id="chatbox" className="p-4 h-[450px] overflow-y-auto">
+    <div
+      id="chatbox"
+      data-testid="chatbox"
+      className="p-4 h-[450px] overflow-y-auto"
+    >
       {/* <!-- Chat messages will be displayed here --> */}
       {messages.map((message, index) => (
         <BubleMessage
